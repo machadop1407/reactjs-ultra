@@ -1,0 +1,524 @@
+/* Reset and Base Styles */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0e
+    url(https://www.toptal.com/designers/subtlepatterns/patterns/nami.png);
+  font-family: "Quicksand", sans-serif;
+  letter-spacing: -0.23px;
+}
+
+/* ---------- Auth Page Container ---------- */
+.auth-container {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: rgba(22, 22, 27, 0.6); /* translucent dark background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Auth Heading ---------- */
+.auth-container h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* ---------- Auth Form ---------- */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-container form label {
+  color: white;
+  font-weight: bold;
+}
+
+/* Input Styling */
+.auth-container form input {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Placeholder Styling */
+.auth-container form input::placeholder {
+  color: #b1b1b1;
+}
+
+/* Input Focus */
+.auth-container form input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Button Styling */
+.auth-container form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4870df;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container form button:hover {
+  background-color: #3c559c;
+}
+
+/* Error Text Styling */
+.auth-container .error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Toggle Links Styling */
+.auth-container p {
+  text-align: center;
+  color: white;
+}
+
+.auth-container p button {
+  background: none;
+  border: none;
+  color: #4870df;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background-color: rgba(22, 22, 27, 0.6); /* semi-transparent background */
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(10px); /* applies blur to content behind the navbar */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* subtle border for extra definition */
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.navbar ul li {
+  margin-right: 1.5rem;
+}
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+.navbar ul li a:hover {
+  text-decoration: none;
+}
+
+/* Loader Styles */
+.loader-wrapper {
+  margin: 80px auto;
+  text-align: center;
+}
+.loader-text {
+  color: #4870df;
+  font-weight: bold;
+}
+.loader,
+.loader::before,
+.loader::after {
+  border-radius: 1em;
+  width: 1em;
+  height: 1em;
+  animation-fill-mode: both;
+  animation: loading 1.8s infinite ease-in-out;
+}
+.loader {
+  margin: auto;
+  color: #4870df;
+  font-size: 12px;
+  position: relative;
+  animation-delay: -0.16s;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+.loader::before {
+  left: -1.5em;
+  animation-delay: -0.32s;
+}
+.loader::after {
+  left: 1.5em;
+}
+
+/* Chat App Container */
+.chat-app {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Room (Page) Container */
+.room {
+  display: flex;
+  align-content: flex-start;
+  justify-content: center;
+  padding: 5rem 20rem;
+  animation: fadeChatApp 0.6s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* Conversation Styles */
+/* ---------- Conversation Container (Centered) ---------- */
+.conv {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 1rem;
+  background-color: rgba(22, 22, 27, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 35px 20px -30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.conv .conv-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(72, 112, 223, 0.8);
+}
+.conv-timeline {
+  height: 400px; /* fixed height */
+  overflow-y: auto; /* enable vertical scrolling when content exceeds height */
+
+  padding-bottom: 1rem;
+}
+
+/* ---------- Chat Message (Glassy Look) ---------- */
+.conv-message-item {
+  margin: 1rem 0;
+  /* Using flex to align the message container */
+  display: flex;
+  flex-direction: column;
+}
+.conv-message-details {
+  font-size: 14px;
+  color: white;
+  margin-top: 0.3rem;
+
+  text-align: right;
+}
+.conv-message-value {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Align left/right messages */
+.conv-message-item--left .conv-message-value,
+.conv-message-item--left .conv-message-details {
+  align-self: flex-start;
+  text-align: left;
+  display: flex;
+}
+.conv-message-item--right .conv-message-value,
+.conv-message-item--right .conv-message-details {
+  align-self: flex-end;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Send Message Area (Glassy Input) ---------- */
+.conv-send-message {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  padding-top: 2rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.conv-send-message form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* align-items: center; */
+  /* padding: 1rem; */
+  background-color: rgba(22, 22, 27, 0.6);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.conv-input {
+  flex-grow: 1;
+  /* height: 40px; */
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 16px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  color: white;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  margin-right: 1rem;
+}
+.conv-input::placeholder {
+  color: #b1b1b1;
+}
+.conv-button {
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4870df;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.conv-button:hover {
+  background-color: #3c559c;
+}
+
+/* ---------- Optional: Error Text ---------- */
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+
+/* Room List Page */
+.room-list {
+  padding: 2rem;
+  padding-right: 2rem;
+  background-color: rgba(22, 22, 27, 0.6); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* applies blur to content behind the navbar */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.room-list h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Reset the UL and LI to remove any browser defaults */
+.room-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.room-list ul li {
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+/* Updated button styling for each room link */
+.room-list ul li a {
+  display: block; /* makes the link a block-level element */
+  margin: 0; /* removes any extra margin */
+  padding: 0.75rem 1rem; /* internal spacing */
+  background-color: #4870df; /* base button background color */
+  color: white; /* button text color */
+  text-align: center; /* center the text */
+  text-decoration: none; /* remove default underline */
+  font-size: 16px; /* font size */
+  border-radius: 4px; /* rounded corners */
+  transition: background-color 0.3s ease; /* smooth hover transition */
+}
+
+/* Hover effect for the room buttons */
+.room-list ul li a:hover {
+  background-color: #3c559c; /* darker shade on hover */
+}
+
+/* Create Room Page */
+.create-room {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(22, 22, 27, 0.6); /* semi-transparent background */
+  backdrop-filter: blur(10px); /* applies a blur effect to content behind */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.create-room h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.create-room form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-room form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.create-room form input[type="text"] {
+  display: block; /* make it a block-level element */
+  width: 95%; /* set a width (adjust as needed) */
+  margin: 0 auto 1rem auto; /* top: 0, auto left/right, bottom: 1rem */
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #dedfed;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  text-align: center; /* center the placeholder and entered text */
+}
+
+.create-room form button {
+  padding: 0.75rem;
+  background-color: #4870df;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.create-room form button:hover {
+  background-color: #3c559c;
+}
+
+/* Logout Button (used in ChatRoom page) */
+.logout-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  float: right;
+}
+
+/* Error Text */
+.error-text {
+  color: red;
+  font-size: 14px;
+}
+
+/* Message Date (inside each message) */
+.message-date {
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* Animations */
+@keyframes loading {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 1em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 1em 0 0;
+  }
+}
+@keyframes fadeChatApp {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeNewMessage {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes loadSendMessage {
+  0% {
+    opacity: 1;
+    width: 4px;
+    height: 4px;
+  }
+  100% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes typingMessage {
+  0% {
+    background-color: #606060;
+  }
+  50% {
+    background-color: #fff;
+  }
+  60% {
+    background-color: #606060;
+  }
+}

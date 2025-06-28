@@ -1,0 +1,131 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Global Container for Header and Footer */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.site-header {
+  background-color: #343a40;
+  color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header h1 {
+  margin: 0;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li a {
+  color: #fff;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-list li a:hover {
+  background-color: #495057;
+  color: #f8f9fa;
+  border-radius: 4px;
+}
+
+/* Home Page Styles */
+.site-main {
+  padding: 60px 0;
+  background-color: #f2f2f2;
+}
+
+/* Override container for the Home section */
+.site-main .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.intro,
+.about,
+.contact {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro:hover,
+.about:hover,
+.contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.intro h2,
+.about h2,
+.contact h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.intro p,
+.about p,
+.contact p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Image Display Styles */
+.image-display {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image-display img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #343a40;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}

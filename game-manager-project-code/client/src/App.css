@@ -1,0 +1,273 @@
+/* ======================================
+   THEME VARIABLES
+   ====================================== */
+
+/* Default to LIGHT MODE if no class is set */
+:root {
+  --color-bg: #ffffff; /* White page background */
+  --color-text: #333333; /* Dark text */
+  --color-accent: #0cc669; /* Bright green accent */
+  --color-card: #f4f4f4; /* Light card background */
+}
+
+/* Dark theme overrides */
+.dark-mode {
+  --color-bg: #080808; /* Very dark background */
+  --color-text: #c2c1c9; /* Light gray text */
+  --color-card: #373554; /* Dark card accent */
+}
+
+/* If you want your project to start in dark mode, you can 
+   make :root define the dark colors, and .light-mode override them.
+   (We'll leave it as-is: default light, dark overrides.) */
+
+/* ======================================
+   GLOBAL RESET & BASE
+   ====================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Nunito", sans-serif, Arial, sans-serif;
+  /* We'll reference the variables for background & text */
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* ======================================
+   FULL-WIDTH NAVBAR
+   ====================================== */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Glass effect */
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+}
+
+.navbar .navbar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar .navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar a:hover {
+  color: var(--color-accent);
+}
+
+/* ======================================
+   PAGE CONTAINER
+   ====================================== */
+.page-container {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* ======================================
+   HEADINGS & TEXT
+   ====================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ======================================
+   LINKS (Outside Navbar)
+   ====================================== */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0aa65b;
+}
+
+/* ======================================
+   FORMS & CARD BLOCKS
+   ====================================== */
+.bg-card {
+  background-color: var(--color-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form-container label {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-container input {
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* ======================================
+   BUTTONS
+   ====================================== */
+button {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0aa65b;
+}
+
+/* ======================================
+   GAMES GRID
+   ====================================== */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 1rem;
+  place-items: center;
+}
+
+.game-card {
+  width: 90%;
+  max-width: 320px;
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.game-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px; /* Toggle width */
+  height: 26px; /* Toggle height */
+}
+
+/* Hide default checkbox */
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider bar */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc; /* The "off" color */
+  transition: 0.4s;
+  border-radius: 26px; /* Round edges */
+}
+
+/* The knob inside the slider */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #fff; /* Knob color */
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* When the checkbox is checked, move the knob to the right */
+.theme-switch input:checked + .slider {
+  background-color: var(--color-accent); /* The "on" color, e.g. your accent */
+}
+
+/* Move the knob */
+.theme-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Optional: to create a round slider (not strictly needed, but common) */
+.slider.round {
+  border-radius: 26px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
